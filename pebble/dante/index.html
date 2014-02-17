@@ -22,7 +22,11 @@
         <div data-role="fieldcontain">
           <label for="forecast_api_key">Forecast.io API Key:</label>
           <input id="forecast_api_key" type="text" name="forecast_api_key" value="">
-          </div>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="emoncms_api_key">Emoncms API Write Key:</label>
+          <input id="emoncms_api_key" type="text" name="emoncms_api_key" value="">
+        </div>
         <div data-role="fieldcontain">
           <label for="stock_symbol">Stock Symbol:</label>
           <input id="stock_symbol" type="text" name="stock_symbol" value="">
@@ -58,6 +62,7 @@
           var options;
           return options = {
             forecast_api_key: $("#forecast_api_key").val(),
+            emoncms_api_key: $("#emoncms_api_key").val(),
             stock_symbol: $("#stock_symbol").val()
           };
         };
@@ -70,7 +75,8 @@
             return document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
           });
           $("#forecast_api_key").val(getQueryVariable("forecast_api_key"));
-          return $("#stock_symbol").val(getQueryVariable("stock_symbol"));
+          $("#emoncms_api_key").val(getQueryVariable("emoncms_api_key"));
+          $("#stock_symbol").val(getQueryVariable("stock_symbol"));
         });
 
       }).call(this);

@@ -31,6 +31,10 @@
           <label for="stock_symbol">Stock Symbol:</label>
           <input id="stock_symbol" type="text" name="stock_symbol" value="">
         </div>
+        <div data-role="fieldcontain">
+          <label for="ws_enabled>WebSocket enabled</label>
+          <input id="ws_enabled" type="checkbox" name="stock_symbol" value="">
+        </div>
         <div class="ui-body ui-body-b">
           <fieldset class="ui-grid-a">
             <div class="ui-block-a"><button id="b-cancel" type="submit" data-theme="b">Cancelar</button></div>
@@ -64,6 +68,7 @@
             forecast_api_key: $("#forecast_api_key").val(),
             emoncms_api_key: $("#emoncms_api_key").val(),
             stock_symbol: $("#stock_symbol").val()
+            ws_enabled: $("#ws_enabled").val()
           };
         };
 
@@ -77,6 +82,7 @@
           $("#forecast_api_key").val(getQueryVariable("forecast_api_key"));
           $("#emoncms_api_key").val(getQueryVariable("emoncms_api_key"));
           $("#stock_symbol").val(getQueryVariable("stock_symbol"));
+          $("#ws_enabled").val(getQueryVariable("ws_enabled"));
         });
 
       }).call(this);

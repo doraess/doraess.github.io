@@ -76,7 +76,9 @@
       return document.location = "pebblejs://close#";
     });
     $("#b-submit").click(function() {
-      return document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+      var options;
+      options = saveOptions();
+      return document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
     });
     $("#forecast_api_key").val(getQueryVariable("forecast_api_key"));
     $("#emoncms_api_key").val(getQueryVariable("emoncms_api_key"));

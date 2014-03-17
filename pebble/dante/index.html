@@ -77,7 +77,7 @@
     $("#forecast_api_key").val(getQueryVariable("forecast_api_key"));
     $("#emoncms_api_key").val(getQueryVariable("emoncms_api_key"));
     $("#stock_symbol").val(getQueryVariable("stock_symbol"));
-    if (getQueryVariable("ws_enabled") === true) {
+    if (getQueryVariable("ws_enabled") === 'true') {
       return $("#ws_enabled").prop("checked", "checked");
     } else {
       return $("#ws_enabled").prop("checked", "");

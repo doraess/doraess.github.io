@@ -65,10 +65,14 @@
 
   $().ready(function() {
     $("#b-cancel").click(function() {
+      console.log("Cancelando...");
       return document.location = "pebblejs://close#";
     });
     $("#b-submit").click(function() {
-      return document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+      var options;
+      options = JSON.stringify(saveOptions());
+      console.log("Opciones ---> " + options);
+      return document.location = "pebblejs://close#" + encodeURIComponent(options);
     });
     $("#forecast_api_key").val(getQueryVariable("forecast_api_key"));
     $("#emoncms_api_key").val(getQueryVariable("emoncms_api_key"));

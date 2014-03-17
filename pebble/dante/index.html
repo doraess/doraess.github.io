@@ -9,7 +9,6 @@
     <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
     <!--script(src='http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js')-->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <style>.ui-header .ui-title { margin-left: 1em; margin-right: 1em; text-overflow: clip; }</style>
   </head>
   <body>
     <div id="main" class="container">
@@ -69,9 +68,7 @@
       return document.location = "pebblejs://close#";
     });
     $("#b-submit").click(function() {
-      var options;
-      options = saveOptions();
-      return document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
+      return document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
     });
     $("#forecast_api_key").val(getQueryVariable("forecast_api_key"));
     $("#emoncms_api_key").val(getQueryVariable("emoncms_api_key"));
